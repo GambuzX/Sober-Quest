@@ -25,6 +25,7 @@ public class ThrowableBottle : MonoBehaviour
     public void setMoveDirection(int movedir)
     {
         this.movedir = movedir;
+        GetComponent<Animator>().SetBool("right", movedir > 0 ? true : false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
