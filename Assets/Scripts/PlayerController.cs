@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public float Speed;
     public ThrowableBottle bottle;
-    public int winTimeSeconds = 5;
 
     private bool right;
 
@@ -24,14 +23,15 @@ public class PlayerController : MonoBehaviour
     public AudioClip hitSound;
 
     private AudioSource audioSource;
+    private TimeCounter timeCounter;
 
     void Start()
     {
         this.lifeManager = GameObject.FindObjectOfType<LifeManager>();
         joystick = GameObject.FindObjectOfType<VirtualJoystick>();
-        Invoke("winGame", winTimeSeconds);
-        GameObject.FindObjectOfType<TimeCounter>().resetTime();
         audioSource = GetComponent<AudioSource>();
+        timeCounter = GameObject.FindObjectOfType<TimeCounter>();
+        timeCounter.resetTime();
     }
 
     // Update is called once per frame
@@ -101,13 +101,22 @@ public class PlayerController : MonoBehaviour
             audioSource.Play();
             if (lifeManager.playerDead())
             {
-                SceneManager.LoadScene("GameOver");
+                this.endGame();
             }
         }
     }
 
-    private void winGame()
+    private void endGame()
     {
-        SceneManager.LoadScene("WinScreen");
+        int score = timeCounter.getTime();
+        if (score > PlayerPrefs.GetInt("highscore", 0))
+        {
+            PlayerPrefs.SetInt("highscore", score);
+            SceneManager.LoadScene("WinScreen");
+        }
+        else
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

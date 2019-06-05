@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class GameOverTime : MonoBehaviour
+public class TimerUIText : MonoBehaviour
 {
 
     private Text text;

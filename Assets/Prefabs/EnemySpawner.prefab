@@ -51,3 +51,4 @@ MonoBehaviour:
   - {x: -7.06, y: -1.23, z: 0}
   decrementSpawnRateTime: 10
   spawnRate: 10
+  minimumSpawnRate: 2
