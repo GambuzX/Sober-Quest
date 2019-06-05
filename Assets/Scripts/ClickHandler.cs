@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 public class ClickHandler : MonoBehaviour
 {
 
+    private bool loadLock;
+
+    private void Start()
+    {
+        this.loadLock = true;
+        Invoke("unlockLoadLock", 2);
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
@@ -13,6 +21,11 @@ public class ClickHandler : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("Menu");
+        if (!loadLock) SceneManager.LoadScene("Menu");
+    }
+
+    private void unlockLoadLock()
+    {
+        this.loadLock = false;
     }
 }

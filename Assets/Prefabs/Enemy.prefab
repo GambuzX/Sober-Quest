@@ -99,12 +99,12 @@ MonoBehaviour:
   speed: 0.5
   animator: {fileID: 0}
   idleSounds:
-  - {fileID: 8300000, guid: 35dfa4ebb8ba96f44bebfd41974b3f2e, type: 3}
-  - {fileID: 8300000, guid: 7f15c1c365babeb46a7080cb053b2a13, type: 3}
-  - {fileID: 8300000, guid: 238fe2bc6e26cbc4e9f771e9f4b34b2b, type: 3}
-  - {fileID: 8300000, guid: 40e1c8b541d1782418f6be0b6707ee46, type: 3}
-  - {fileID: 8300000, guid: 39b40078dac23f3429c44b59eed3bb8c, type: 3}
-  dieSound: {fileID: 8300000, guid: 6745b82865ad00d4cb38cdb517600631, type: 3}
+  - {fileID: 8300000, guid: 7c4da284711b0ab4d970912fceeb9bb3, type: 3}
+  - {fileID: 8300000, guid: 0be71bd699ff40a47bc6db31b1133bb9, type: 3}
+  - {fileID: 8300000, guid: e469c6c1bba0d914db8be007a52673ef, type: 3}
+  - {fileID: 8300000, guid: 60ef964d7ff4ea942b984497e203d24f, type: 3}
+  - {fileID: 8300000, guid: 97e8517297aa77944ac9693c54639951, type: 3}
+  dieSound: {fileID: 8300000, guid: d4c5ac983a43def4d97bc46db8d87cc0, type: 3}
 --- !u!95 &7248616177037791833
 Animator:
   serializedVersion: 3
