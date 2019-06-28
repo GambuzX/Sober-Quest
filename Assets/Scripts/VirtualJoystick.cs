@@ -32,8 +32,6 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
                 new Vector3(inputVector.x * (bgImg.rectTransform.sizeDelta.x / 2),
                             inputVector.z * (bgImg.rectTransform.sizeDelta.y / 2));
     
-
-            Debug.Log(inputVector);
         }
     }
 
